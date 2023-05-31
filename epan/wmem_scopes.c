@@ -140,7 +140,7 @@ wmem_cleanup_scopes(void)
     ws_assert(epan_scope);
 
     ws_assert(!wmem_in_scope(packet_scope));
-    ws_assert(wmem_in_scope(file_scope));
+    ws_assert(!wmem_in_scope(file_scope));
 
     wmem_destroy_allocator(packet_scope);
     wmem_destroy_allocator(file_scope);
